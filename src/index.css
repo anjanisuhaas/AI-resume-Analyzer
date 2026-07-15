@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2563EB;
+  --color-accent: #7C3AED;
+  --color-dark-bg: #0F172A;
+  --color-dark-card: #1E293B;
+  
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 transition-colors duration-300 font-sans antialiased;
+  }
+  
+  html.dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/50 shadow-xl rounded-2xl transition-all duration-300;
+}
+
+.glass-nav {
+  @apply bg-white/70 dark:bg-slate-950/70 backdrop-blur-lg border-b border-slate-200/40 dark:border-slate-800/40 sticky top-0 z-50;
+}
+
+/* Gradients and Animations */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+}
+
+.gradient-btn {
+  @apply bg-gradient-to-r from-primary to-accent hover:from-blue-600 hover:to-violet-600 text-white shadow-lg shadow-blue-500/20 hover:shadow-violet-500/30 transition-all duration-300 transform active:scale-95;
+}
+
+.gradient-border-hover {
+  position: relative;
+}
+
+.gradient-border-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(to right, #2563EB, #7C3AED);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border-hover:hover::before {
+  opacity: 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-slate-400 dark:hover:bg-slate-700 transition-colors;
+}
+
+/* Print Specific CSS Styles for Clean Reports */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .glass-card {
+    background: transparent !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+  
+  .print-break {
+    page-break-before: always;
+  }
+}
+
+/* Pulse Glows */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
