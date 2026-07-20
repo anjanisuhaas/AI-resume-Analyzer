@@ -14,7 +14,7 @@ export const HeroSection = ({ onStart }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20">
+          <span className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-border">
             <span>✨ Powered by Gemini 2.5 Flash</span>
           </span>
         </motion.div>
@@ -23,7 +23,7 @@ export const HeroSection = ({ onStart }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-slate-800 dark:text-white"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-text"
         >
           AI Resume Analyzer & <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
@@ -35,7 +35,7 @@ export const HeroSection = ({ onStart }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-base sm:text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-[rgba(90,70,50,0.7)] max-w-2xl mx-auto leading-relaxed"
         >
           Upload your resume and receive an AI-powered ATS score, recruiter feedback, missing skills analysis, strengths, weaknesses, and personalized improvement suggestions within seconds.
         </motion.p>

@@ -4,14 +4,16 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
+  darkMode: false,
   theme: {
     extend: {
       colors: {
-        primary: '#2563EB',
-        accent: '#7C3AED',
-        darkBg: '#0F172A',
-        darkCard: '#1E293B',
+        primary: '#A67C52',
+        accent: '#D9C1A6',
+        neutralbg: '#FBF7F3',
+        card: '#FFF7F0',
+        border: '#E6D8C9',
+        text: '#5B4636'
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

@@ -1,42 +1,53 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2563EB;
-  --color-accent: #7C3AED;
-  --color-dark-bg: #0F172A;
-  --color-dark-card: #1E293B;
-  
+  --color-primary: #A67C52;
+  --color-accent: #D9C1A6;
+  --color-bg: #FBF7F3;
+  --color-card: #FFF7F0;
+  --color-border: #E6D8C9;
+  --color-text: #5B4636;
   --font-sans: "Inter", sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900 transition-colors duration-300 font-sans antialiased;
-  }
-  
-  html.dark body {
-    @apply bg-slate-950 text-slate-100;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: color 0.2s ease, background-color 0.2s ease;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* Glassmorphism Styles */
+/* Clean minimal cards and nav for light brown theme */
 .glass-card {
-  @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/50 shadow-xl rounded-2xl transition-all duration-300;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 6px 18px rgba(90,70,50,0.04);
+  border-radius: 1rem;
+  transition: all 0.2s ease;
 }
 
 .glass-nav {
-  @apply bg-white/70 dark:bg-slate-950/70 backdrop-blur-lg border-b border-slate-200/40 dark:border-slate-800/40 sticky top-0 z-50;
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
-/* Gradients and Animations */
+/* Gradient utilities adapted to brown palette */
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
 }
 
 .gradient-btn {
-  @apply bg-gradient-to-r from-primary to-accent hover:from-blue-600 hover:to-violet-600 text-white shadow-lg shadow-blue-500/20 hover:shadow-violet-500/30 transition-all duration-300 transform active:scale-95;
+  @apply bg-gradient-to-r from-primary to-accent text-white shadow transition-all duration-200 transform active:scale-95;
 }
 
+/* Subtle hover border accent */
 .gradient-border-hover {
   position: relative;
 }
@@ -47,13 +58,13 @@
   inset: 0;
   border-radius: inherit;
   padding: 1.5px;
-  background: linear-gradient(to right, #2563EB, #7C3AED);
+  background: linear-gradient(to right, #A67C52, #D9C1A6);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .gradient-border-hover:hover::before {
@@ -71,7 +82,8 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-slate-400 dark:hover:bg-slate-700 transition-colors;
+  background: rgba(90,70,50,0.18);
+  border-radius: 9999px;
 }
 
 /* Print Specific CSS Styles for Clean Reports */
@@ -80,23 +92,17 @@
     background: white !important;
     color: black !important;
   }
-  
   .glass-card {
     background: transparent !important;
     border: 1px solid #cbd5e1 !important;
     box-shadow: none !important;
     page-break-inside: avoid;
   }
-  
-  .print-break {
-    page-break-before: always;
-  }
 }
 
-/* Pulse Glows */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-8px); }
 }
 
 .animate-float {

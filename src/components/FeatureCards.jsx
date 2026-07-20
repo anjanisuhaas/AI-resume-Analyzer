@@ -58,10 +58,10 @@ export const FeatureCards = () => {
   return (
     <section className="py-12 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-12 space-y-3">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-800 dark:text-white">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-text">
           Comprehensive Analysis Tools
         </h2>
-        <p className="text-sm text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
+        <p className="text-sm text-[rgba(90,70,50,0.7)] max-w-xl mx-auto">
           Get complete insights into your resume performance across multiple metrics.
         </p>
       </div>
@@ -74,15 +74,15 @@ export const FeatureCards = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5, delay: idx * 0.05 }}
-            className="glass-card p-6 border border-slate-200/50 dark:border-slate-800/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-start text-left"
+            className="glass-card p-6 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-start text-left"
           >
-            <div className="p-3 bg-primary/10 dark:bg-primary/5 text-primary rounded-xl mb-4">
+            <div className="p-3 bg-primary/10 text-primary rounded-xl mb-4">
               {feature.icon}
             </div>
-            <h3 className="font-bold text-base text-slate-850 dark:text-white mb-2">
+            <h3 className="font-bold text-base text-text mb-2">
               {feature.title}
             </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+            <p className="text-xs text-[rgba(90,70,50,0.7)] leading-relaxed">
               {feature.description}
             </p>
           </motion.div>
